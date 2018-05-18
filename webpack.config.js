@@ -2,7 +2,9 @@ const path = require('path')
 
 // console.log(path.join(__dirname, 'public')); jak sprawdzic absolutna sciezke
 
-module.exports = {
+module.exports = (env) => {
+    const isProduction = env === 'production';
+    return {
     entry: './src/app.js',
     output: {
         path: path.join(__dirname, 'public'),
@@ -24,12 +26,12 @@ module.exports = {
         }]
 
     },
-    devtool: 'cheap-module-eval-source-map', //przydaje sie do debugowania
+    devtool: isProduction ? "source-map" : 'cheap-module-eval-source-map', //przydaje sie do debugowania
     devServer: {
         contentBase: path.join(__dirname, 'public'), //dzieki temu nie musimy miec bundle.js w public dir
         historyApiFallback: true //dzieki temu Route wie gdzie ma wyrenderowac 
     }
-};
-
+}
+}
 
 //loader 
