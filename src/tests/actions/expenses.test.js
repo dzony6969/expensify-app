@@ -53,3 +53,8 @@ test('should setup add expense action default', () =>{
 
     });
 });
+
+test('should fetch expenses from firebase', () => {
+
+
+});

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ExpenseForm from './ExpenseForm';
-import { editExpense, removeExpense } from '../actions/expenses';
+import { setEditExpense, setRemoveExpense } from '../actions/expenses';
 const EditExpensePage = (props) => {
     return (
     <div>
@@ -11,12 +11,12 @@ const EditExpensePage = (props) => {
         expense={props.expense}
 
         onSubmit={(expense) => {
-            props.dispatch(editExpense(props.expense.id, expense)); //dodawaniee
+            props.dispatch(setEditExpense(props.expense.id, expense)); //dodawaniee
             props.history.push('/');
         }}
         />
         <button onClick={(expense) => {
-       props.dispatch(removeExpense({id: props.expense.id}));
+       props.dispatch(setRemoveExpense({id: props.expense.id}));
        props.history.push('/')
         // HandleDeleteItem musisz podac id i dispatch w w.w obiekcie
       }}>Remove</button>
