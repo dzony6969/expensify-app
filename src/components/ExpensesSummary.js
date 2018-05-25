@@ -6,12 +6,13 @@ import numeral from 'numeral';
 import { Link } from 'react-router-dom';
 
 const ExpensesSummary = ({expenseCount, expensesTotal}) => {
-    const expenseWord = expenseCount === 1 ? 'expense' : 'expenses';
+    const expenseWord = expenseCount === 1 ? 'swój ' : 'swoje ';
+    const expensePlurar = expenseCount === 1 ? 'wydatek' : 'wydatki'
     const formattedExpensesTotal = numeral(expensesTotal /100).format('0,0.00') + ('zł')
     return (
     <div className='page-header'>
     <div className='content-container'>
-        <h1 className='page-header__title'>Oglądasz <span>{expenseCount}</span>  swoje wydatki <br/>  Suma: <span>{formattedExpensesTotal}</span></h1>
+        <h1 className='page-header__title'>Oglądasz <span>{expenseCount}</span>  {expenseWord}{expensePlurar} <br/>  Suma: <span>{formattedExpensesTotal}</span></h1>
         <div className='page-header__actions'>
             <Link to='/create' className='button'> Dodaj nowy wydatek </Link>
         </div>

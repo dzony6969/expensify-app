@@ -43,7 +43,7 @@ export default class ExpenseForm extends React.Component {
         e.preventDefault();
 
         if(!this.state.description || !this.state.amount) {
-          this.setState(() => ({error: 'provide description and amount'}))
+          this.setState(() => ({error: 'Nie dodano nazwy oraz kwoty wydatku'}))
         } else {
             this.setState(() => ({error: ''}));
             this.props.onSubmit({
