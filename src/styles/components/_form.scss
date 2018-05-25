@@ -1,0 +1,24 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    > * {
+        margin-bottom: $m-size;
+    }
+}
+.form__error {
+    margin: 0 0 $m-size 0;
+    font-style: italic;
+    color: white;
+    background-color: rgb(245, 99, 89);
+    padding: 20px;
+    text-align: center;
+}
+.content__title {
+    padding: 20px;
+    background-color: rgb(255, 170, 44);
+    color: white;
+    text-align: center;
+}
+.content__name {
+    font-weight: 700;
+}

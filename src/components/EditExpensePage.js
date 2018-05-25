@@ -4,8 +4,9 @@ import ExpenseForm from './ExpenseForm';
 import { setEditExpense, setRemoveExpense } from '../actions/expenses';
 const EditExpensePage = (props) => {
     return (
-    <div>
-        edditing the expense of {props.match.params.id} 
+    <div className='page-header'>
+    <div className='content-container'>
+       <p className='content__title'> Edytujesz wydatek o nazwie <span className='content__name'>{props.expense.description}</span> </p>
           {/* pokazuje id w ktorym jestesmy */}
         <ExpenseForm 
         expense={props.expense}
@@ -15,11 +16,14 @@ const EditExpensePage = (props) => {
             props.history.push('/');
         }}
         />
-        <button onClick={(expense) => {
+        <div>
+        <button className='button button--secondary' onClick={(expense) => {
        props.dispatch(setRemoveExpense({id: props.expense.id}));
        props.history.push('/')
         // HandleDeleteItem musisz podac id i dispatch w w.w obiekcie
-      }}>Remove</button>
+      }}>Usuń</button>
+      </div>
+      </div>
     </div>
 )
 }

@@ -3,10 +3,18 @@ import { connect } from 'react-redux';
 import ExpenseListItem from './ExpenseListItem'
 import selectExpenses  from '../selectors/expenses';
 export const ExpenseList = (props) => (
-    <div>
+    <div className='content-container'>
+    <div className='list-header'>
+    <div className='show-for-mobile'>Wydatki</div>
+    <div className='show-for-desktop'>Wydatek</div>
+    <div className='show-for-desktop'>Kwota</div>
+    </div>
+    <div className='list-body'>
         {
         props.expenses.length === 0 ? (
-                <p>No expenses</p>
+                <div className='list-item list-item--msg'>
+                    <span>Brak wydatków</span>
+                </div>
             ) : (
                 props.expenses.map((expense) => {
                     return <ExpenseListItem key={expense.id} {...expense}/>
@@ -14,7 +22,7 @@ export const ExpenseList = (props) => (
                 })
             )
         }
-        
+        </div>
     </div>
 );
 

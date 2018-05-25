@@ -1,11 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+
 html {
     font-size: 62.5%; //16px * 0.625 = 10px ulatwia uzycie rem
 }
 
 
 body {
+    color: $dark-gray;
     font-family: Helvetica, Arial, sans-serif;
     font-size: $m-size;
+    line-height: 1.6;
 }
 h1 {
     font-size: 2.2rem;
